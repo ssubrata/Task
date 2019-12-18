@@ -1,0 +1,25 @@
+
+<pre *ngIf="todos.length==0">You don't have any task....</pre>
+    <ul class="list-group">
+        <li *ngFor="let todo of todos" class="list-group-item d-flex justify-content-between align-items-center">
+
+            <div class="col-md-8">
+                {{todo.title}}
+                <div class="action">
+                    <span class="badge badge-primary badge-pill">
+                        <i  (click)="onEdit(todo)" class="fa fa-pencil" aria-hidden="true"></i>
+
+                    </span>
+                    <span class="badge badge-danger badge-pill">
+                        <i (click)="onDelete(todo)"  class="fa fa-trash-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div>
+                    <i  class="fa fa-clock-o mr-2" aria-hidden="true"> {{todo.from}} - {{todo.to}}</i>
+                    <i class="fa fa-map-marker mr-2" aria-hidden="true"> {{todo.location}} </i>
+
+                </div>
+            </div>
+
+        </li>
+    </ul>

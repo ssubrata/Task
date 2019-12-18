@@ -1,0 +1,71 @@
+<form class="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+    <div class="form-group">
+        <label for="title">Title</label>
+
+
+        <input type="text" required name="title" [(ngModel)]="todo.title" #title="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" class="form-control" placeholder="Andre Piarec"
+            aria-describedby="helpId">
+
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" required name="description" id="text" [(ngModel)]="todo.description" #description="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" class="form-control" placeholder=""
+            aria-describedby="helpId">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input [ngClass]="{ 'is-invalid': f.submitted && date.invalid }" type="date" name="date"
+            [(ngModel)]="todo.date" #date="ngModel" id="date" class="form-control" placeholder="15 May 1984"
+            aria-describedby="helpId">
+
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label for="date">From</label>
+            <input [ngClass]="{ 'is-invalid': f.submitted && from.invalid }" type="text" name="from"
+                [(ngModel)]="todo.from" #from="ngModel" id="from" class="form-control" placeholder="10 AM"
+                aria-describedby="helpId">
+        </div>
+        <div class="col-md-6">
+            
+                <label for="date">To</label>
+                <input [ngClass]="{ 'is-invalid': f.submitted && to.invalid }" type="text" name="to"
+                    [(ngModel)]="todo.to" #to="ngModel" id="to" class="form-control" placeholder="12 AM"
+                    aria-describedby="helpId">
+            
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" [ngClass]="{ 'is-invalid': f.submitted && location.invalid }"
+            [(ngModel)]="todo.location" #location="ngModel" class="form-control" placeholder=""
+            aria-describedby="helpId">
+
+    </div>
+
+    <div class="form-group  row">
+        <div class="col-md-9">
+            <label for="date">Notify</label>
+            <input [ngClass]="{ 'is-invalid': f.submitted && NotifyTime.invalid }" type="text" name="NotifyTime"
+                [(ngModel)]="todo.NotifyTime" #NotifyTime="ngModel" id="NotifyTime" class="form-control"
+                placeholder="10 AM" aria-describedby="helpId">
+        </div>
+
+        <div class="col-md-3">
+            <label for="date">Notify By</label>
+            <input value="Email" [ngClass]="{ 'is-invalid': f.submitted && NotifyBy.invalid }" type="text" name="NotifyBy"
+                [(ngModel)]="todo.NotifyBy" #NotifyBy="ngModel" id="NotifyTime" class="form-control"
+                aria-describedby="helpId">
+        </div>
+
+
+    </div>
+    <button  type="button " class=" btn btn-primary btn-lg btn-block">Add</button>
+
+</form>
